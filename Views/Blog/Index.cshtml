@@ -1,0 +1,28 @@
+@using System.Linq
+
+@{
+    ViewData["Title"] = "Blog Listesi";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>Blog sayfasına hoş geldiniz!</p>
+
+@if (Model != null && Model.Count > 0)
+{
+    <ul>
+        @foreach (var blog in Model)
+        {
+            <li>
+                <strong>@blog.Title</strong><br />
+                <span>@blog.Content</span><br />
+                <span>Yayınlanma Tarihi: @blog.PublishedDate.ToString("dd MMM yyyy")</span><br />
+                <span>Kategori: @blog.Category.Name</span>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>Henüz blog yazısı bulunmamaktadır.</p>
+}

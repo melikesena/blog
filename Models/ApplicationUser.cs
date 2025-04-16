@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Identity;
+using blog.Models;
 
 public class ApplicationUser : IdentityUser
 {
